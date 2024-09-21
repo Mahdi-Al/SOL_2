@@ -2,12 +2,12 @@
 
 ## Task overview
 
-You will be manage two entities: **User** and **Post**.
+You will be manage two entities: **User** and **Post**.✅
 
 ## Step 1: Setup the project
 
-1. Initialize a new express project and install necessary dependencies such as (sequelize, mysql-2, env, ...).
-2. Setup **sequelize** in your project and configure it to use **my-sql** database.
+1. Initialize a new express project and install necessary dependencies such as (sequelize, mysql-2, env, ...).✅
+2. Setup **sequelize** in your project and configure it to use **my-sql** database.✅
 3. Setup **express** to handle incoming requests and sync the database.
 
 ## Step 2: Creating models and associations
