@@ -4,7 +4,8 @@
   "description": "You will be manage two entities: **User** and **Post**.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch c:/Users/ARKA/Documents/SOL_2/server/app.js"
   },
   "author": "",
   "license": "ISC",
