@@ -1,11 +1,11 @@
 const User = require("../models/User");
-
+const Post = require("../models/Post");
 module.exports.getAllTheUsers = async (req, res) => {
   try {
     const users = await User.findAll();
     res.send(users);
   } catch (error) {
-    console.log("error in getAuthors controller", error);
+    console.log("error in get User controller", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -22,10 +22,10 @@ module.exports.updateUser = async (req, res) => {
   try {
     const { id } = req.params;
     const isExistUser = await User.findByPk(id);
-    if (!isExistBook) {
+    if (!isExistUser) {
       return res.status(404).json({ message: "user not found!" });
     }
-    const newData = await isExistBook.update(req.body);
+    const newData = await isExistUser.update(req.body);
     res.status(200).send(newData);
   } catch (error) {
     console.log("error in update controller", error);
@@ -36,7 +36,7 @@ module.exports.updateUser = async (req, res) => {
 module.exports.deleteUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const isExistUser = await Book.findByPk(id);
+    const isExistUser = await User.findByPk(id);
 
     if (!isExistUser) {
       return res.status(404).json({ message: "user not found!" });
@@ -46,6 +46,21 @@ module.exports.deleteUser = async (req, res) => {
     res.status(204).end();
   } catch (error) {
     console.log("error in delete user controller", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+module.exports.getAllThePostsForUser = async (req, res) => {
+  try {
+    const isExistUser = await User.findByPk(req.params.userId);
+
+    if (!isExistUser) {
+      return res.status(404).json({ message: "User not found!" });
+    }
+
+    const posts = await isExistUser.getPosts();
+    res.send(posts);
+  } catch (error) {
+    console.log("error in get posts by user controller", error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
