@@ -64,3 +64,18 @@ module.exports.getAllThePostsForUser = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+module.exports.createPostForUser = async (req, res) => {
+  try {
+    const isExistUser = await User.findByPk(req.params.userId);
+
+    if (!isExistUser) {
+      return res.status(404).json({ message: "User not found!" });
+    }
+
+    const newPost = await isExistUser.createPost(req.body);
+    res.status(201).send(newPost);
+  } catch (error) {
+    console.log("error in create post controller", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

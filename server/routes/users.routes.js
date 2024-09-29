@@ -5,6 +5,7 @@ const {
   updateUser,
   deleteUser,
   getAllThePostsForUser,
+  createPostForUser,
 } = require("../controllers/users.controller");
 const routerUser = Router();
 /**
@@ -49,3 +50,4 @@ module.exports = routerUser;
  * @description : Get all the
  */
 routerUser.get("/:userId/posts", getAllThePostsForUser);
+routerUser.post("/:userId/posts", createPostForUser);

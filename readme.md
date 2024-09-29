@@ -29,11 +29,11 @@ You will be manage two entities: **User** and **Post**.✅
 
 **Post crud operations**
 
-1. Create a Post for a User: Implement a `POST /users/:userId/posts` endpoint to create a post for a specific user.
-2. Get all Posts for a User: Implement a `GET /users/:userId/posts` endpoint to fetch all posts for a specific user.
-3. Update a Post: Implement a `PUT /posts/:id` endpoint to update post details.
-4. Delete a Post: Implement a `DELETE /posts/:id` endpoint to delete a specific post.
+1. Create a Post for a User: Implement a `POST /users/:userId/posts` endpoint to create a post for a specific user.✅
+2. Get all Posts for a User: Implement a `GET /users/:userId/posts` endpoint to fetch all posts for a specific user.✅
+3. Update a Post: Implement a `PUT /posts/:id` endpoint to update post details.✅
+4. Delete a Post: Implement a `DELETE /posts/:id` endpoint to delete a specific post.✅
 
 ## Final step: Testing the API :D
 
-Test the API using **Postman** to ensure all CRUD operations and associations work as expected.
+Test the API using **Postman** to ensure all CRUD operations and associations work as expected.✅
